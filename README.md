@@ -12,7 +12,7 @@ Run in a [Docker][1] container on [nginx][2] server.
 [x] install Docker and docker-compose
 [x] run nginx in a container
 [x] create docker-compose file
-[ ] add server config files
+[x] add server config files
 [ ] add hello world page
 [ ] get domain (vopat.dev)
 [ ] add https
