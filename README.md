@@ -13,7 +13,7 @@ Run in a [Docker][1] container on [nginx][2] server.
 [x] run nginx in a container
 [x] create docker-compose file
 [x] add server config files
-[ ] add hello world page
+[x] add hello world page
 [ ] get domain (vopat.dev)
 [ ] add https
 [ ] find suitable webpage template
