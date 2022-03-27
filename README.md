@@ -9,15 +9,15 @@ Run in a [Docker][1] container on [nginx][2] server.
 
 ## TODO List
 
-[x] install Docker and docker-compose
-[x] run nginx in a container
-[x] create docker-compose file
-[x] add server config files
-[x] add hello world page
-[ ] get domain (vopat.dev)
-[ ] add https
-[ ] find suitable webpage template
-[ ] add context
+- [x] install Docker and docker-compose
+- [x] run nginx in a container
+- [x] create docker-compose file
+- [x] add server config files
+- [x] add hello world page
+- [ ] get domain (vopat.dev)
+- [ ] add https
+- [ ] find suitable webpage template
+- [ ] add context
 
 ## Installation
 
