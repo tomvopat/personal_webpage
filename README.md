@@ -14,10 +14,13 @@ Run in a [Docker][1] container on [nginx][2] server.
 - [x] create docker-compose file
 - [x] add server config files
 - [x] add hello world page
-- [ ] get domain (vopat.dev)
+- [x] get domain
 - [ ] add https
 - [ ] find suitable webpage template
-- [ ] add context
+
+    * https://github.com/h5bp/html5-boilerplate
+
+- [ ] add content
 
 ## Installation
 
