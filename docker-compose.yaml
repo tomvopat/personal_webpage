@@ -8,4 +8,4 @@ services:
     volumes:
       - ./config/nginx.conf:/etc/nginx/nginx.conf
       - ./config/server.conf:/etc/nginx/conf.d/server.conf
-      - ./data/data/_site:/usr/share/nginx/html/
+      - ./data/_site:/usr/share/nginx/html/

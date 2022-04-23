@@ -27,6 +27,7 @@ Clean and minimalistic personal webpage with page about me and with a blog.
 ## Installation
 
 ```bash
+(cd data ; bundle exec jekyll build)
 docker-compose up
 ```
 
