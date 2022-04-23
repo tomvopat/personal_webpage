@@ -28,6 +28,7 @@ layout: compress
   </script>
 
   {% include navbar.html %}
+
   <div class="wrapper">
     <main aria-label="Content">
       {{ content }}
@@ -44,7 +45,7 @@ layout: compress
     galite.UA = "{{ site.google_analytics }}";
   </script>
 {%- endif -%}
-{%- if page.url == '/archive/' -%}
+{%- if page.url == '/blog/' -%}
   <script src="/assets/js/search.min.js"></script>
   <script>
     var sjs = SimpleJekyllSearch({
