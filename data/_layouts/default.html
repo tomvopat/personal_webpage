@@ -32,8 +32,8 @@ layout: compress
   <div class="wrapper">
     <main aria-label="Content">
       {{ content }}
-    {% include footer.html %}
     </main>
+    {% include footer.html %}
   </div>
 
 <script src="/assets/js/main.js" defer="defer"></script>
@@ -45,6 +45,7 @@ layout: compress
     galite.UA = "{{ site.google_analytics }}";
   </script>
 {%- endif -%}
+
 {%- if page.url == '/blog/' -%}
   <script src="/assets/js/search.min.js"></script>
   <script>
