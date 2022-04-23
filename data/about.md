@@ -1,18 +1,28 @@
 ---
-title: Colophon
+title: About Tomas
 permalink: /about/
 layout: page
-excerpt: Hello peeps, I'm student of computer science from Banyuwangi, living in Jogjakarta. This blog for documentation about my programming journey, running on jekyll, hosting on netlify and using my own simple theme.
 comments: false
 ---
 
-He's a student from Banyuwangi, living in Jogjakarta. the blog for documentation about his programming 🎒 journey, running on jekyll, hosting on [now.sh](http://now.sh) and using his own theme, he name it <a href="https://github.com/piharpi/jekyll-klise" target="_blank" rel="noopener">klisé</a>, he also loves to learning web technology; but he often forgot, that a reason why him doing the writing.
+<img
+    class="author-avatar"
+    src="{{ site.author.avatar }}"
+    alt="{{ site.author.username }}"/>
 
-If you have a question about him or else, just send a letter to him.
+## Who is he
 
-You can [report](http://github.com/piharpi/jekyll-klise/issues/new) if there is an broken link(s) or somethings else.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat eleifend lobortis. Curabitur quis enim et ipsum rutrum eleifend. Cras non mattis elit, vel blandit dolor. Vestibulum mattis ac lacus in tincidunt. Suspendisse dui felis, vehicula et egestas nec, laoreet nec ex. Nam euismod varius diam, vitae sagittis quam feugiat id. Praesent vel commodo est, sit amet vulputate mauris. Donec quis ante id tortor vestibulum fermentum ut at quam. Fusce tristique volutpat scelerisque. Morbi finibus in velit ut lacinia. Vestibulum vel felis consequat, rhoncus ante sed, hendrerit libero. Maecenas in eleifend lectus, eget accumsan turpis.
 
-**may u needs ✨**
+## What he does
+
+Vestibulum sit amet augue nec tortor convallis porttitor. Aliquam risus sapien, venenatis at iaculis eu, elementum id quam. Sed et luctus mi, vitae blandit odio. Quisque semper volutpat urna, vel convallis lorem dignissim ac. Vestibulum mattis pulvinar ultricies. Integer eu consectetur sapien. Donec a rutrum diam, vitae sagittis felis. Vestibulum iaculis ultrices laoreet. Phasellus quam lectus, vehicula vitae lacinia a, sodales non odio. Quisque in turpis ante. Vivamus vestibulum porttitor tristique.
+
+## What he uses
+
+Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque rutrum ligula at efficitur vestibulum. Maecenas eget justo libero. Mauris vitae ornare turpis, non tempus urna. Curabitur egestas tempor dolor, vel luctus arcu facilisis dignissim. Aliquam sagittis neque eu urna lobortis, in placerat urna bibendum. Curabitur ut tincidunt mi. Duis elementum imperdiet facilisis. Aliquam a nisi elementum, sagittis orci eget, luctus nisi. Integer suscipit mauris et nisl aliquet, non bibendum mauris laoreet. Vivamus non nisi sed lorem tristique tristique.
+
+## Links
 
 - {{ site.author.email }}
 - github.com/{{ site.author.github }}
