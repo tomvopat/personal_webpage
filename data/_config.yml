@@ -1,12 +1,18 @@
+defaults:
+  - scope:
+      path: ""
+    values:
+      lang: "en-US"
+      timezone: "Europe/London"
+      mode: "dark"  # "dark" | "light"
+
 # Site settings
 title: Tomas # site title
 description: >- # site description
   Tomas's website about what he does and his blog.
-lang: en-US # default lang
-timezone: Europe/Helsinki # set your timezone
+timezone: "Europe/Helsinki"
 image: assets/img/ogp.png # This image used for Open Graph more info https://ogp.me/
 repo: https://github.com/tomvopat/personal_webpage # site repo [optional]
-mode: dark # default theme "dark" | "light"
 
 # Profile settings
 author:
