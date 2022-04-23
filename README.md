@@ -1,26 +1,26 @@
 # Personal Webpage
 
-Basic personal webpage for self presentation and software projects.
+Clean and minimalistic personal webpage with page about me and with a blog.
 
-Run in a [Docker][1] container on [nginx][2] server.
+## Technical Details
 
-[1]: https://docs.docker.com/
-[2]: http://nginx.org/en/docs/
+* Content is generated with [Jekyll][1]
+* [Nginx][2] is used as a web server
+* All runs in a [Docker][3] container
 
 ## TODO List
 
 - [x] install Docker and docker-compose
-- [x] run nginx in a container
-- [x] create docker-compose file
-- [x] add server config files
-- [x] add hello world page
 - [x] get domain
-- [ ] add https
-- [ ] find suitable webpage template
 
-    * https://github.com/h5bp/html5-boilerplate
+    * https://www.freenom.com/
+    * https://www.cloudflare.com/
 
-- [ ] add content
+- [x] run Nginx server with docker-compose file
+- [ ] add Jekyll hello world
+- [ ] get Jekyll theme
+- [ ] add "About me" page
+- [ ] add blog
 
 ## Installation
 
@@ -33,3 +33,7 @@ docker-compose up
 ```bash
 docker-compose down
 ```
+
+[1]: https://jekyllrb.com/
+[2]: https://www.nginx.com/
+[3]: https://www.docker.com/
