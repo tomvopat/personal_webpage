@@ -1,0 +1,11 @@
+# Profile settings
+name: Tomas Vopat # author name
+bio: >- # tell to the world
+  I am so happy to welcome you at my page! I would like to introduce myself to
+  you and show you what I work on. Interested?
+username: Tomas # general username
+github: tomvopat # github username
+twitter: tomvopat # twitter username
+#facebook: facebook_username # facebook username
+email: tomas.vopat@gmail.com # email adress
+avatar: /assets/img/avatar.jpg # change with your own avatar

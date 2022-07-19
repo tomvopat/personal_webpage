@@ -281,6 +281,7 @@ blockquote {
   margin-left: auto;
   padding-right: $spacing-full;
   padding-left: $spacing-full;
+  padding-top: 3rem;
   @extend %clearfix;
 
   @include media-query($on-mobile) {
