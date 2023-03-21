@@ -1,21 +1,27 @@
-defaults:
-  - scope:
-      path: ""
-    values:
-      lang: "en-US"
-      timezone: "Europe/Helsinki"
-      mode: "light"  # "dark" | "light"
-
 # Site settings
-title: Tomas # site title
+title: Tomas
 description: >- # site description
-  Mini site about Tomas and his blog.
-timezone: "Europe/Helsinki"
-image: assets/img/ogp.jpg # This image used for Open Graph more info https://ogp.me/
+  Micro site about me and my blog.
+lang: en-US # default lang
+timezone: Europe/Helsinki # set your timezone
+image: assets/img/ogp.png # This image used for Open Graph more info https://ogp.me/
 repo: https://github.com/tomvopat/personal_webpage # site repo [optional]
+mode: light # default theme "dark" | "light"
+
+# Profile settings
+author:
+  name: Tomas Vopat # author name
+  bio: >- # tell to the world
+    Software developer in telecom.
+  username: tomasvopat # general username
+  github: tomvopat # github username
+  twitter: tomvopat # twitter username
+  linkedin: tomvopat # linkedin username
+  email: tomas.vopat@gmail.com # email adress
+  avatar: /assets/img/avatar.jpg # change with your own avatar
 
 # URL settings
-url: "https://vopat.tk" #
+url: "https://vopat.tk"
 baseurl:
 permalink: /:title/
 google_analytics: # leave it blank if not wish
@@ -55,7 +61,7 @@ jekyll_compose:
 number_of_posts: 5
 
 # Build settings
-# theme: klise
+theme: klise
 sass:
   style: compressed
 
@@ -67,15 +73,7 @@ exclude:
   - CNAME
   - Gemfile
   - Gemfile.lock
-  - LICENSE
-  - CHANGELOG.md
-  - README.md
   - node_modules
-  - CODE_OF_CONDUCT.md
-  - CONTRIBUTING.md
-  - lighthouse.png
-  - klise-*.gem
-  - klise.gemspec
 
 # Plugins
 plugins:

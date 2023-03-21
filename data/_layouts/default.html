@@ -3,8 +3,7 @@ layout: compress
 ---
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: " en " }}">
-
-{% include head.html %}
+{% include header.html %}
 
 <body data-theme="{{ site.mode }}" class="notransition">
 
@@ -21,41 +20,19 @@ layout: compress
         localStorage.setItem("theme", data);
       }
     };
-
+ 
     initTheme(localStorage.getItem("theme"));
-
+    
     setTimeout(() => body.classList.remove("notransition"), 75);
   </script>
 
   {% include navbar.html %}
-
   <div class="wrapper">
+    {% include author.html %}
     <main aria-label="Content">
       {{ content }}
     </main>
     {% include footer.html %}
   </div>
-
-<script src="/assets/js/main.js" defer="defer"></script>
-
-{%- if page.google_analytics -%}
-  <script src="/assets/js/galite.js"></script>
-  <script>
-    var galite = galite || {};
-    galite.UA = "{{ site.google_analytics }}";
-  </script>
-{%- endif -%}
-
-{%- if page.url == '/blog/' -%}
-  <script src="/assets/js/search.min.js"></script>
-  <script>
-    var sjs = SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('search-results'),
-      json: '/assets/search.json',
-    });
-  </script>
-{%- endif -%}
-
 </body>
 </html>

@@ -179,13 +179,14 @@
   }
 }
 
-// Author, Blog (on home page)
-.author, .blog {
-    margin-bottom: 3rem;
-    text-align: center;
+// Author
+.author {
+  margin-top: 6.3rem;
+  margin-bottom: 7.2rem;
+  text-align: center;
 
   @include media-query($on-mobile) {
-    margin-bottom: 2em;
+    margin-bottom: 3em;
   }
 
   .author-avatar {
@@ -206,12 +207,11 @@
     margin-bottom: 2px;
   }
 
-  > p {
+  .author-bio {
     margin: 0 auto;
     opacity: 0.9;
-    max-width: 75%;
+    max-width: 393px;
     line-height: 1.688;
-    margin-bottom: 1em;
   }
 }
 
@@ -377,21 +377,4 @@
     border: 1px solid rgba(128, 128, 128, 0.1);
     background-color: rgba(128, 128, 128, 0.1);
   }
-}
-
-.btn {
-    background-color: #dfd3c3;
-    display: inline-block;
-    padding: 0.2em 1.0em;
-    border: none;
-    border-radius: 0.3em;
-    text-decoration: none;
-    text-align: center;
-    transition: all 0.2s;
-
-    &:hover {
-        background-color: #c7b198;
-        color: $text-base-color;
-    }
-
 }

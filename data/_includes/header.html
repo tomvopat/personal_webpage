@@ -72,7 +72,7 @@
   <meta property="og:type" content="article" />
   <meta
     property="article:publisher"
-    content="https://web.facebook.com/{{ site.author.facebook }}"
+    content="https://linkedin.com/in/{{ site.author.linkedin }}"
   />
   {% else %}
   <meta property="og:type" content="website" />
@@ -161,6 +161,15 @@
   <meta name="theme-color" content="#2c2c2c" />
 
   <link rel="stylesheet" href="/assets/css/style.css" />
-  {% seo %}
-  {% feed_meta %}
+
+  <!-- for mathjax support -->
+  {% if page.usemathjax %}
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  {% endif %}
+    
 </head>

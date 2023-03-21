@@ -24,7 +24,22 @@ Clean and minimalistic personal webpage with page about me and with a blog.
 - [ ] add "About me" page
 - [ ] add blog
 
-## Installation
+## Deployment
+
+### Local Deployment
+
+1. Install [Jekyll](https://jekyllrb.com/docs/installation/)
+
+    ```bash
+    sudo dnf install ruby rubygems ruby-devel gcc gcc-c++ rpm-build
+    sudo gem install jekyll bundler
+    ````
+
+2. Got to data dir: `cd data`
+3. Install dependencies: `bundle`
+4. Build and run server: `bundle exec jekyll serve --livereload`
+
+### Remote Deployment
 
 ```bash
 (cd data ; bundle exec jekyll build)
