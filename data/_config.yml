@@ -1,5 +1,5 @@
 # Site settings
-title: Tomas
+title: Tomas Vopat
 description: >- # site description
   Micro site about me and my blog.
 lang: en-US # default lang
@@ -11,8 +11,10 @@ mode: "light" # default theme "dark" | "light"
 # Profile settings
 author:
   name: Tomas Vopat # author name
-  bio: >- # tell to the world
-    Software developer in telecom.
+  bio: |- # tell to the world
+    Welcome to my personal website! My name is Tomas, and I am a professional software developer in the telecom industry, specializing in IMS.
+    I am passionate about all things related to technology, particularly Linux, cloud computing, containers, AI, and DevOps. I believe that the best way to solve complex problems is to stay up-to-date with the latest technologies and explore new tools that can help me be more productive and efficient in my work.
+    On this website, you'll find my personal blog where I share my experiences, insights, and tips related to the technologies that I work with. Whether you're a fellow developer or simply interested in the latest trends in the tech world, I hope that my blog will provide you with valuable insights and ideas. Thanks for visiting!
   username: tomasvopat # general username
   github: tomvopat # github username
   twitter: tomvopat # twitter username
