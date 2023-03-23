@@ -15,7 +15,8 @@ Apart from my hobbies, I am committed to continuing my education and staying up-
 
 Through this website, I hope to share my insights and experiences in the world of software development with others in the industry. I strongly believe that sharing knowledge and ideas is essential for growth and development, and I am excited to contribute my own unique perspective to the conversation. Thank you for stopping by, and I hope you find my content useful!
 
-**may u needs ✨**
+**How to contact me**
 
-- [Send me an e-mail](mailto:{{ site.author.email }})
-- [Check out my Github](https://github.com/{{ site.author.github }})
+- Send me an [e-mail](mailto:{{ site.author.email }})
+- Visit my profile on [Twitter](https://twitter.com/{{ site.author.twitter }}) or [LinkedIn](https://www.linkedin.com/in/{{ site.author.linkedin }})
+- Check out projects on Github [Github](https://github.com/{{ site.author.github }})
