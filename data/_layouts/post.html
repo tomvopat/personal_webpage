@@ -62,6 +62,11 @@ layout: compress
             <span hidden itemprop="mainEntityOfPage">{{ page.excerpt }}</span>
           </div>
           {% endif %}
+          {% if page.image %}
+          <div class="post-image">
+            <img src="{{ page.image }}"/>
+          </div>
+          {% endif %}
         </header>
 
         <div class="page-content" itemprop="articleBody">
