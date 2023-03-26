@@ -21,8 +21,9 @@ Clean and minimalistic personal webpage with page about me and with a blog.
 
     * https://github.com/piharpi/jekyll-klise
 
-- [ ] add "About me" page
-- [ ] add blog
+- [x] add "about" page
+- [x] add blog
+- [x] add first blog post 
 
 ## Deployment
 
