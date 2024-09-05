@@ -23,7 +23,7 @@ Clean and minimalistic personal webpage with page about me and with a blog.
 
 - [x] add "about" page
 - [x] add blog
-- [x] add first blog post 
+- [x] add first blog post
 
 ## Deployment
 
